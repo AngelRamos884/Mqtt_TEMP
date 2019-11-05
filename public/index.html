@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script >
+    var mqtt = require('mqtt')
+    var client  = mqtt.connect('mqtt://192.168.1.132')
+    
+    client.on('connect', function () {
+    client.subscribe('published', function (err) {
+        if (!err) {
+        client.publish('published', 'Hello mqtt')
+        }
+    })
+    })
+    
+    client.on('message', function (topic, message) {
+    // message is Buffer
+    console.log(message.toString())
+    client.end()
+    })
+    </script>
+
+</html>
