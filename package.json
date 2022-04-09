@@ -17,7 +17,7 @@
     "firmata-party": "^1.5.10",
     "johnny-five": "^1.3.1",
     "jquery": "^3.4.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.7.7",
     "mosca": "^2.8.3",
     "mqtt": "^3.0.0",
